@@ -1,0 +1,2 @@
+rootProject.name = "SlitherKeyboard"
+include ':app'
