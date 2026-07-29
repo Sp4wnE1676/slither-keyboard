@@ -17,11 +17,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Set up Gradle wrapper
-        uses: gradle/actions/setup-gradle@v3
+      - name: Generate Gradle wrapper (8.2 - AGP 8.2.0 ile uyumlu)
+        run: gradle wrapper --gradle-version 8.2
 
       - name: Build debug APK
-        run: gradle assembleDebug --no-daemon
+        run: ./gradlew assembleDebug --no-daemon
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
